@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Allergy.Models;
 
 namespace Allergy.TestTool
@@ -10,10 +11,10 @@ namespace Allergy.TestTool
     public void AllergicTo_ReturnEggs_True()
     {
       AllergicTo testAllergicTo = new AllergicTo();
-      string[] testAllergyArray = new string[1];
-      testAllergyArray[0] = "eggs";
-      string[] inputAllergyArray = testAllergicTo.CheckAllergicTo(1);
-      CollectionAssert.AreEqual(testAllergyArray, inputAllergyArray);
+      List<string> testAllergyList = new List<string>();
+      testAllergyList.Add("eggs");
+      List<string> inputAllergyList = testAllergicTo.CheckAllergicTo(1);
+      CollectionAssert.AreEqual(testAllergyList, inputAllergyList);
     }
   }
 }
