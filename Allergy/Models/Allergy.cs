@@ -4,9 +4,11 @@ namespace Allergy.Models
 {
   public class AllergicTo
   {
-    public static bool CheckAllergicTo(int score)
+    public string[] CheckAllergicTo(int score)
     {
-      return false;
+      string[] allergyArray = new string[1];
+      allergyArray[0] = "eggs";
+      return allergyArray;
     }
   }
 }
