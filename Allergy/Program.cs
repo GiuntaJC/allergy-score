@@ -13,8 +13,19 @@ namespace Allergy
       string stringAllergyScore = Console.ReadLine();
       int allergyScore = int.Parse(stringAllergyScore);
 
-      List<string> allergyList = allergicTo.CheckAllergicTo(allergyScore);
-      Console.WriteLine(allergyList[0]);
+      if(allergyScore >= 256 || allergyScore < 0)
+      {
+        Console.WriteLine("That's not possible!");
+      }
+      else
+      {
+        List<string> allergyList = allergicTo.CheckAllergicTo(allergyScore);
+      
+        foreach(string i in allergyList)
+        {
+          Console.WriteLine(i);
+        }
+      }
     }
   }
 }
